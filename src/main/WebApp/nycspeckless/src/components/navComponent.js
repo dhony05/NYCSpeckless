@@ -1,4 +1,4 @@
-import React,{useEffect,useState}  from 'react';
+import React,{useEffect}  from 'react';
 
 import axios from 'axios';
 import Main from './main';
@@ -9,7 +9,7 @@ import {Link,withRouter} from 'react-router-dom';
 
         useEffect(() => {
 
-            async function fetchMyAPI(){
+            const fetchMyAPI = async() =>{
             axios.get(BINS_REST_API_URL).then(({data}) => {
             // setData(data.data);
             localStorage.setItem('apiRes', JSON.stringify(data))
